@@ -1,2 +1,2 @@
 #!/bin/bash
-$ find /. -type d -ls -A| wc -l
+ls -IR | grep ^d | wc -1
