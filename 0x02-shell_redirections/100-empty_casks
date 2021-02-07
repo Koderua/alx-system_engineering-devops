@@ -1,2 +1,2 @@
 #!/bin/bash
-find . name ".*" "*" -empty -execdir echo {} ';'
+ls -aR | find -empty
