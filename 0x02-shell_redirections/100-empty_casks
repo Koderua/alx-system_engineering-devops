@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 2 -empty -name "*" -o -name ".*" | ls -1 -al
+find . -path '*/\.*' -empty | ls -1 -al
