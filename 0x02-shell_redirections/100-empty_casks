@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -maxdepth 2 -empty | ls -1 -al
+find . -maxdepth 2 -empty -name "*" -o -name ".*" | ls -1 -al
