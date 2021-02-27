@@ -1,0 +1,2 @@
+#!/bib/bash
+sudo usermod -l betty
