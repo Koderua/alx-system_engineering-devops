@@ -4,7 +4,7 @@
 .SH SYNOPSIS
 eniac
 .SH DESCRIPTION
-Eniac Was Turing-complete, and ble to solve "a large class of numerical problems" through reprogramming.
+Eniac Was Turing-complete, and able to solve "a large class of numerical problems" through reprogramming.
 .SH OPTIONS
 *eniac* does not take any options.
 .SH SEE ALSO
