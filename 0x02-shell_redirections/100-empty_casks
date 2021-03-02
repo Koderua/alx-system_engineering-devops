@@ -1,2 +1,0 @@
-#!/bin/bash
-find . -path '*/\.*' -empty | ls -m1 -al
