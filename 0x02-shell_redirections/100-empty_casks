@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -laR | cut -d " " -f 5,9 --output-delimiter=' ' | grep ^0 | cut -d " " -f 2
