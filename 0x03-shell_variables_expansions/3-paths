@@ -1,2 +1,2 @@
-#!/bin/bath
-echo "$PATH" | tr -d "/" | tr ":" " " | wc -w
+#!/bin/bash
+echo $PATH | tr -d "/" | tr ":" " " | wc -w
