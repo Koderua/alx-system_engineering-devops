@@ -1,2 +1,1 @@
-# Processes and Signals #
-## ALX Holberton - SWE Program - January Cohort ##
+# 0x05. Processes and signals
