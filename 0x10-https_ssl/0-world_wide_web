@@ -1,13 +1,28 @@
 #!/usr/bin/env bash
-#
-subdomains_list=(www lb-01 web-01 web-02)
-if [ "$#" -eq 1 ]
+# script that will display information about subdomains.
+
+function single_domain_details {
+	dig "${2}"."$1" | grep -A1 'ANSWER SECTION:' | \
+	awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$2"
+}
+
+function all_domain_details {
+	domain_names=("www" "lb-01" "web-01" "web-02")
+
+	for i in "${domain_names[@]}";
+	do
+		dig "${i}"."$1" | grep -A1 'ANSWER SECTION:' | \
+		awk 'FNR == 2 {printf "The subdomain %s is a %s record and points to %s\n", var, $4, $5}' var="$i"
+	done
+}
+
+
+if [ $# -lt 1 ]
 then
-    for i in "${subdomains_list[@]}"
-    do
-        dig "$i"."$1" | grep -e ^"$i" | awk '{print "The subdomain '"$i"' is a", $4, "record and points to", $5}'
-    done
-elif [ "$#" -eq 2 ]
+	echo "Domain name required"
+elif [ $# -eq 1 ]
 then
-    dig "$2"."$1" | grep -e ^"$2" | awk '{print "The subdomain '"$2"' is a", $4, "record and points to", $5}'
+	all_domain_details "$1";
+else
+	single_domain_details "$1" "$2";
 fi
