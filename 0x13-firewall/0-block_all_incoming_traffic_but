@@ -1,0 +1,10 @@
+sudo adduser username
+sudo usermod -aG sudo username
+sudo su - username
+sudo whoami
+sudo apt install ufw
+sudo ufw status verbose
+sudo ufw enable
+sudo ufw allow ssh
+sudo ufw allow https
+sudo ufw allow http
